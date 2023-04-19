@@ -79,3 +79,14 @@ class wall():
 class paddle():
     def __init__(self):
         self.reset()
+
+    def move(self):
+
+        self.direction = 0
+        key = pygame.key.get_pressed()
+        if key[pygame.K_LEFT] and self.rect.left > 0:
+            self.rect.x -= self.speed
+            self.direction = -1
+        if key[pygame.K_RIGHT] and self.rect.right < screen_width:
+            self.rect.x += self.speed
+            self.direction = 1
