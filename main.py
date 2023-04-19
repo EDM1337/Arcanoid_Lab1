@@ -104,3 +104,7 @@ class paddle():
         self.speed = 10
         self.rect = Rect(self.x, self.y, self.width, self.height)
         self.direction = 0
+
+class game_ball():
+    def __init__(self, x, y):
+        self.reset(x, y)
