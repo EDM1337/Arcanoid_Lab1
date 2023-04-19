@@ -171,6 +171,8 @@ class game_ball():
 
         return self.game_over
 
+run = True
+while run:
 
     def draw(self):
         pygame.draw.circle(screen, paddle_col, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad),
