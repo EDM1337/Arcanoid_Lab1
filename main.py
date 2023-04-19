@@ -90,3 +90,8 @@ class paddle():
         if key[pygame.K_RIGHT] and self.rect.right < screen_width:
             self.rect.x += self.speed
             self.direction = 1
+
+    def draw(self):
+        pygame.draw.rect(screen, paddle_col, self.rect)
+        pygame.draw.rect(screen, paddle_outline, self.rect, 3)
+
