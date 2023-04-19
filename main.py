@@ -187,3 +187,7 @@ class game_ball():
         self.speed_y = -4
         self.speed_max = 5
         self.game_over = 0
+
+# create a wall
+wall = wall()
+wall.create_wall()
