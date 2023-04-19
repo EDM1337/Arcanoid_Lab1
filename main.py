@@ -191,3 +191,5 @@ class game_ball():
 # create a wall
 wall = wall()
 wall.create_wall()
+# create paddle
+player_paddle = paddle()
