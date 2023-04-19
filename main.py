@@ -62,3 +62,16 @@ class wall():
                 block_row.append(block_individual)
 
             self.blocks.append(block_row)
+
+    def draw_wall(self):
+                for row in self.blocks:
+                    for block in row:
+
+                        if block[1] == 3:
+                            block_col = block_blue
+                        elif block[1] == 2:
+                            block_col = block_green
+                        elif block[1] == 1:
+                            block_col = block_red
+                        pygame.draw.rect(screen, block_col, block[0])
+                        pygame.draw.rect(screen, bg, (block[0]), 2)
