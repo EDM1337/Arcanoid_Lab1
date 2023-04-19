@@ -171,8 +171,7 @@ class game_ball():
 
         return self.game_over
 
-run = True
-while run:
+
 
     def draw(self):
         pygame.draw.circle(screen, paddle_col, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad),
@@ -197,3 +196,23 @@ wall.create_wall()
 player_paddle = paddle()
 # create ball
 ball = game_ball(player_paddle.x + (player_paddle.width // 2), player_paddle.y - player_paddle.height)
+
+run = True
+while run:
+
+    clock.tick(fps)
+
+    screen.fill(bg)
+
+    # draw all objects
+    wall.draw_wall()
+    player_paddle.draw()
+    ball.draw()
+
+    if live_ball:
+        # draw paddle
+        player_paddle.move()
+        # draw ball
+        game_over = ball.move()
+        if game_over != 0:
+            live_ball = False
