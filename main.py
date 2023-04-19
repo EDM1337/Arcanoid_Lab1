@@ -170,3 +170,10 @@ class game_ball():
         self.rect.y += self.speed_y
 
         return self.game_over
+
+
+    def draw(self):
+        pygame.draw.circle(screen, paddle_col, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad),
+                           self.ball_rad)
+        pygame.draw.circle(screen, paddle_outline, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad),
+                           self.ball_rad, 3)
