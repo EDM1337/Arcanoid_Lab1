@@ -90,7 +90,3 @@ class paddle():
         if key[pygame.K_RIGHT] and self.rect.right < screen_width:
             self.rect.x += self.speed
             self.direction = 1
-
-class game_ball():
-    def __init__(self, x, y):
-        self.reset(x, y)
