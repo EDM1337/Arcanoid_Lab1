@@ -193,3 +193,5 @@ wall = wall()
 wall.create_wall()
 # create paddle
 player_paddle = paddle()
+# create ball
+ball = game_ball(player_paddle.x + (player_paddle.width // 2), player_paddle.y - player_paddle.height)
