@@ -238,3 +238,5 @@ while run:
                 wall.create_wall()
 
         pygame.display.update()
+
+pygame.quit()
