@@ -75,3 +75,7 @@ class wall():
                             block_col = block_red
                         pygame.draw.rect(screen, block_col, block[0])
                         pygame.draw.rect(screen, bg, (block[0]), 2)
+
+class paddle():
+    def __init__(self):
+        self.reset()
