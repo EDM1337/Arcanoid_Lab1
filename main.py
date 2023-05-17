@@ -35,7 +35,7 @@ def draw_text(text, font, text_col, x, y):
     screen.blit(img, (x, y))
 
 
-class wall():
+class Wall():
     def __init__(self):
         self.blocks = None
         self.width = screen_width // cols
@@ -122,6 +122,7 @@ class paddle():
 
 class game_ball():
     def __init__(self, x, y):
+        self.y = None
         self.x = None
         self.speed_x = None
         self.speed_y = None
@@ -211,7 +212,7 @@ class game_ball():
 
 
 # create a wall
-wall = wall()
+wall = Wall()
 wall.create_wall()
 # create paddle
 player_paddle = paddle()
