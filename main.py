@@ -109,6 +109,7 @@ class game_ball():
     def __init__(self, x, y):
         self.reset(x, y)
 
+
     def move(self):
         collision_thresh = 5
         wall_destroyed = 1
@@ -179,6 +180,8 @@ class game_ball():
         pygame.draw.circle(screen, paddle_outline, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad),
                            self.ball_rad, 3)
 
+    def bounce_off_wall(self):
+        self.speed_x *= -1
     def reset(self, x, y):
         self.ball_rad = 10
         self.x = x - self.ball_rad
@@ -238,6 +241,13 @@ while run:
             wall.create_wall()
 
     pygame.display.update()
+
+def is_game_over(game_over):
+    # Перевіряємо стан гри та повертаємо результат
+    if game_over:
+        return True
+    else:
+        return False
 
 pygame.quit()
 
