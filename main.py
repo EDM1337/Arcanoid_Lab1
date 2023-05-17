@@ -1,8 +1,8 @@
 import os
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-
 import pygame
 from pygame import Rect
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 pygame.init()
 
