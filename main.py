@@ -28,15 +28,21 @@ clock = pygame.time.Clock()
 fps = 60
 live_ball = False
 game_over = 0
+
+
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     screen.blit(img, (x, y))
+
+
 class wall():
     def __init__(self):
+        self.blocks = None
         self.width = screen_width // cols
         self.height = 50
 
     def create_wall(self):
+        global strength
         self.blocks = []
 
         block_individual = []
@@ -64,20 +70,28 @@ class wall():
             self.blocks.append(block_row)
 
     def draw_wall(self):
-                for row in self.blocks:
-                    for block in row:
+        global block_col
+        for row in self.blocks:
+            for block in row:
 
-                        if block[1] == 3:
-                            block_col = block_blue
-                        elif block[1] == 2:
-                            block_col = block_green
-                        elif block[1] == 1:
-                            block_col = block_red
-                        pygame.draw.rect(screen, block_col, block[0])
-                        pygame.draw.rect(screen, bg, (block[0]), 2)
+                if block[1] == 3:
+                    block_col = block_blue
+                elif block[1] == 2:
+                    block_col = block_green
+                elif block[1] == 1:
+                    block_col = block_red
+                pygame.draw.rect(screen, block_col, block[0])
+                pygame.draw.rect(screen, bg, (block[0]), 2)
+
 
 class paddle():
     def __init__(self):
+        self.rect = None
+        self.width = None
+        self.direction = None
+        self.speed = None
+        self.x = None
+        self.height = None
         self.reset()
 
     def move(self):
@@ -105,10 +119,17 @@ class paddle():
         self.rect = Rect(self.x, self.y, self.width, self.height)
         self.direction = 0
 
+
 class game_ball():
     def __init__(self, x, y):
+        self.x = None
+        self.speed_x = None
+        self.speed_y = None
+        self.speed_max = None
+        self.rect = None
+        self.ball_rad = None
+        self.game_over = None
         self.reset(x, y)
-
 
     def move(self):
         collision_thresh = 5
@@ -127,9 +148,6 @@ class game_ball():
                         self.speed_y *= -1
 
                     if abs(self.rect.right - item[0].left) < collision_thresh and self.speed_x > 0:
-                        self.speed_x *= -1
-
-                    if abs(self.rect.left - item[0].right) < collision_thresh and self.speed_x < 0:
                         self.speed_x *= -1
 
                     if wall.blocks[row_count][item_count][1] > 1:
@@ -172,8 +190,6 @@ class game_ball():
 
         return self.game_over
 
-
-
     def draw(self):
         pygame.draw.circle(screen, paddle_col, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad),
                            self.ball_rad)
@@ -182,6 +198,7 @@ class game_ball():
 
     def bounce_off_wall(self):
         self.speed_x *= -1
+
     def reset(self, x, y):
         self.ball_rad = 10
         self.x = x - self.ball_rad
@@ -191,6 +208,7 @@ class game_ball():
         self.speed_y = -4
         self.speed_max = 5
         self.game_over = 0
+
 
 # create a wall
 wall = wall()
@@ -242,6 +260,7 @@ while run:
 
     pygame.display.update()
 
+
 def is_game_over(game_over):
     # Перевіряємо стан гри та повертаємо результат
     if game_over:
@@ -249,5 +268,5 @@ def is_game_over(game_over):
     else:
         return False
 
-pygame.quit()
 
+pygame.quit()
