@@ -48,4 +48,4 @@ def test_ball_bounce_off_wall():
 def test_game_over():
     # Передаємо необхідні параметри для перевірки
     game_over = True  # Припустимо, гра завершилась
-    assert is_game_over(game_over) == True
+    assert is_game_over(game_over) is True
