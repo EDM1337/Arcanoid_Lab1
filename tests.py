@@ -49,3 +49,6 @@ def test_game_over():
     # Передаємо необхідні параметри для перевірки
     game_over = True  # Припустимо, гра завершилась
     assert is_game_over(game_over) is True
+
+
+pytest.main(["-v", "--html=report_arcanoid.html"])
