@@ -1,5 +1,5 @@
 import pygame
-from pygame.locals import *
+from pygame import Rect
 
 pygame.init()
 
@@ -252,7 +252,7 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-        if event.type == pygame.MOUSEBUTTONDOWN and live_ball == False:
+        if event.type == pygame.MOUSEBUTTONDOWN and live_ball is False:
             live_ball = True
             ball.reset(player_paddle.x + (player_paddle.width // 2), player_paddle.y - player_paddle.height)
             player_paddle.reset()
