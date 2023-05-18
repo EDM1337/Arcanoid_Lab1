@@ -2,14 +2,10 @@ from main import paddle, game_ball, is_game_over
 
 import pytest
 
-
-
-
 # Fixture for creating a player paddle object
 @pytest.fixture
 def create_player_paddle():
     return paddle()
-
 
 # Fixture for creating a game ball object
 @pytest.fixture

@@ -2,8 +2,6 @@
 import pygame
 from pygame import Rect
 
-
-
 pygame.init()
 
 screen_width = 600
@@ -31,7 +29,6 @@ clock = pygame.time.Clock()
 fps = 60
 live_ball = False
 game_over = 0
-
 
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
