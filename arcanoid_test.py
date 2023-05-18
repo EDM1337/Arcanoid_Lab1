@@ -2,7 +2,7 @@ from main import paddle, game_ball, is_game_over
 
 import pytest
 
-screen_width = 600
+
 
 
 # Fixture for creating a player paddle object

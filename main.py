@@ -1,8 +1,8 @@
-import os
+
 import pygame
 from pygame import Rect
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 
 pygame.init()
 
