@@ -25,7 +25,7 @@ def test_game_ball_reset(create_player_paddle, create_game_ball):
     assert create_game_ball.rect.y == create_player_paddle.y - create_player_paddle.height
     assert create_game_ball.speed_x == 4
     assert create_game_ball.speed_y == -4
-    assert create_game_ball.game_over == 0
+    assert create_game_ball.game_over == 0g
 
 
 def test_ball_bounce_off_wall():

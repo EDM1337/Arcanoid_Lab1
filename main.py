@@ -265,10 +265,7 @@ while run:
 
 def is_game_over(game_over):
     # Перевіряємо стан гри та повертаємо результат
-    if game_over:
-        return True
-    else:
-        return False
+    return bool(game_over)
 
 
 pygame.quit()
